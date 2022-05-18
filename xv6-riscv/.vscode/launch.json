@@ -1,17 +1,36 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "xv6debug",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/kernel/kernel",
-            "stopAtEntry": true,
-            "cwd": "${workspaceFolder}",
-            "miDebuggerServerAddress": "127.0.0.1:25501",
-            "miDebuggerPath": "/usr/local/bin/riscv64-unknown-elf-gdb",
-            "MIMode": "gdb",
-            "preLaunchTask": "xv6build"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "xv6debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/kernel/kernel",
+      "stopAtEntry": true,                    // 是否在目标文件的入口处停下来
+      "cwd": "${workspaceFolder}",
+      "miDebuggerServerAddress": "127.0.0.1:25501",
+      "debugServerPath": "",                  //  启动的远程debug的路径
+      "debugServerArgs": "",                  // 启动远程debug的参数
+      "stopAtConnect": false,                 // 是否在连接上的时候在入口处停止
+      "miDebuggerPath": "/usr/local/bin/riscv64-unknown-elf-gdb",
+      "miDebuggerArgs": "",                   // 设置传递给debuger的参数
+      "MIMode": "gdb",
+      "setupCommands": [],                    // 设置GDB的参数列表
+      "customLaunchSetupCommands": [],        // 用一些命令来替换执行目标文件需要的命令
+      "preLaunchTask": "xv6build"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "/Users/bytedance/Documents/jyy-os-course/xv6-riscv",
+      "environment": [],
+      "program": "/Users/bytedance/Documents/jyy-os-course/xv6-riscv/build/Debug/outDebug",
+      "internalConsoleOptions": "openOnSessionStart",
+      "MIMode": "gdb",
+      "console": "integratedTerminal"
+    }
+  ]
 }

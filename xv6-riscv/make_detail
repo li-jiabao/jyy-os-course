@@ -1,64 +1,38 @@
 riscv64-unknown-elf-gcc	
 	-c
-	-o
-	kernel/entry.o
+	-o kernel/entry.o
 	kernel/entry.S
+
 riscv64-unknown-elf-gcc
-	-Wall
-	-Werror
-	-O
-	-fno-omit-frame-pointer
-	-ggdb
-	-MD
-	-mcmodel=medany
-	-ffreestanding
-	-fno-common
-	-nostdlib
-	-mno-relax
-	-I.
-	-fno-stack-protector
-	-fno-pie
+	-Wall -Werror
+	-O -fno-omit-frame-pointer
+	-ggdb -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I.  -fno-stack-protector -fno-pie
 	-no-pie	-c
-	-o
-	kernel/start.o
+	-o kernel/start.o 
 	kernel/start.c
+
 riscv64-unknown-elf-gcc
-	-Wall
-	-Werror
-	-O
-	-fno-omit-frame-pointer
-	-ggdb
-	-MD
-	-mcmodel=medany
-	-ffreestanding
-	-fno-common
-	-nostdlib
-	-mno-relax
-	-I.
-	-fno-stack-protector
-	-fno-pie
-	-no-pie	-c
-	-o
-	kernel/console.o
+	-Wall -Werror -O
+	-fno-omit-frame-pointer -ggdb -MD
+	-mcmodel=medany -ffreestanding -fno-common -nostdlib
+	-mno-relax -I.
+	-fno-stack-protector -fno-pie -no-pie
+	-c
+	-o kernel/console.o
 	kernel/console.c
+	
 riscv64-unknown-elf-gcc
 	-Wall
 	-Werror
 	-O
 	-fno-omit-frame-pointer
-	-ggdb
-	-MD
-	-mcmodel=medany
-	-ffreestanding
-	-fno-common
-	-nostdlib
+	-ggdb -MD -mcmodel=medany
+	-ffreestanding -fno-common -nostdlib
 	-mno-relax
 	-I.
-	-fno-stack-protector
-	-fno-pie
+	-fno-stack-protector -fno-pie
 	-no-pie	-c
-	-o
-	kernel/printf.o
+	-o kernel/printf.o
 	kernel/printf.c
 riscv64-unknown-elf-gcc
 	-Wall
@@ -68,16 +42,11 @@ riscv64-unknown-elf-gcc
 	-ggdb
 	-MD
 	-mcmodel=medany
-	-ffreestanding
-	-fno-common
-	-nostdlib
+	-ffreestanding -fno-common -nostdlib
 	-mno-relax
 	-I.
-	-fno-stack-protector
-	-fno-pie
-	-no-pie	-c
-	-o
-	kernel/uart.o
+	-fno-stack-protector -fno-pie -no-pie	-c
+	-o kernel/uart.o
 	kernel/uart.c
 riscv64-unknown-elf-gcc
 	-Wall
@@ -87,16 +56,13 @@ riscv64-unknown-elf-gcc
 	-ggdb
 	-MD
 	-mcmodel=medany
-	-ffreestanding
-	-fno-common
+	-ffreestanding -fno-common
 	-nostdlib
 	-mno-relax
 	-I.
-	-fno-stack-protector
-	-fno-pie
-	-no-pie	-c
-	-o
-	kernel/kalloc.o
+	-fno-stack-protector -fno-pie -no-pie	
+	-c
+	-o kernel/kalloc.o
 	kernel/kalloc.c
 riscv64-unknown-elf-gcc
 	-Wall
@@ -114,8 +80,7 @@ riscv64-unknown-elf-gcc
 	-fno-stack-protector
 	-fno-pie
 	-no-pie	-c
-	-o
-	kernel/spinlock.o
+	-o kernel/spinlock.o
 	kernel/spinlock.c
 riscv64-unknown-elf-gcc
 	-Wall
@@ -393,6 +358,7 @@ riscv64-unknown-elf-gcc
 	-o
 	kernel/exec.o
 	kernel/exec.c
+	
 riscv64-unknown-elf-gcc
 	-Wall
 	-Werror
@@ -412,11 +378,13 @@ riscv64-unknown-elf-gcc
 	-o
 	kernel/sysfile.o
 	kernel/sysfile.c
+
 riscv64-unknown-elf-gcc	
 	-c
 	-o
 	kernel/kernelvec.o
 	kernel/kernelvec.S
+
 riscv64-unknown-elf-gcc
 	-Wall
 	-Werror
@@ -425,9 +393,7 @@ riscv64-unknown-elf-gcc
 	-ggdb
 	-MD
 	-mcmodel=medany
-	-ffreestanding
-	-fno-common
-	-nostdlib
+	-ffreestanding -fno-common -nostdlib
 	-mno-relax
 	-I.
 	-fno-stack-protector
@@ -436,6 +402,7 @@ riscv64-unknown-elf-gcc
 	-o
 	kernel/plic.o
 	kernel/plic.c
+
 riscv64-unknown-elf-gcc
 	-Wall
 	-Werror
@@ -444,28 +411,22 @@ riscv64-unknown-elf-gcc
 	-ggdb
 	-MD
 	-mcmodel=medany
-	-ffreestanding
-	-fno-common
-	-nostdlib
+	-ffreestanding -fno-common
+	-nostdlib 
 	-mno-relax
 	-I.
-	-fno-stack-protector
-	-fno-pie
-	-no-pie	-c
-	-o
-	kernel/virtio_disk.o
+	-fno-stack-protector -fno-pie -no-pie	-c
+	-o kernel/virtio_disk.o
 	kernel/virtio_disk.c
+
 riscv64-unknown-elf-gcc
-	-Wall
-	-Werror
+	-Wall -Werror
 	-O
 	-fno-omit-frame-pointer
 	-ggdb
 	-MD
 	-mcmodel=medany
-	-ffreestanding
-	-fno-common
-	-nostdlib
+	-ffreestanding -fno-common -nostdlib
 	-mno-relax
 	-I.
 	-fno-stack-protector
@@ -475,39 +436,25 @@ riscv64-unknown-elf-gcc
 	-nostdinc
 	-I.
 	-Ikernel
-	-c
-	user/initcode.S
-	-o
-	user/initcode.o
+	-c user/initcode.S
+	-o user/initcode.o
+
 riscv64-unknown-elf-ld
-	-z
-	max-page-size=4096
-	-N
-	-e
-	start
-	-Ttext
-	0
-	-o
-	user/initcode.out
+	-z max-page-size=4096 
+	-N -e start
+	-Ttext 0
+	-o user/initcode.out
 	user/initcode.o
+
 riscv64-unknown-elf-objcopy
-	-S
-	-O
-	binary
-	user/initcode.out
-	user/initcode
+	-S -O binary user/initcode.out user/initcode
+	
 riscv64-unknown-elf-objdump
-	-S
-	user/initcode.o
-	>
-	user/initcode.asm
+	-S user/initcode.o > user/initcode.asm
+
 riscv64-unknown-elf-ld
-	-z
-	max-page-size=4096
-	-T
-	kernel/kernel.ld
-	-o
-	kernel/kernel
+	-z max-page-size=4096 -T kernel/kernel.ld
+	-o kernel/kernel
 	kernel/entry.o
 	kernel/start.o
 	kernel/console.o
@@ -537,20 +484,7 @@ riscv64-unknown-elf-ld
 	kernel/virtio_disk.o
 	
 riscv64-unknown-elf-objdump
-	-S
-	kernel/kernel
-	>
-	kernel/kernel.asm
+	-S kernel/kernel > kernel/kernel.asm
+
 riscv64-unknown-elf-objdump
-	-t
-	kernel/kernel
-	|
-	sed
-	'1,/SYMBOL TABLE/d;
-	s/
-	.*
-	/
-	/;
-	/^$/d'
-	>
-	kernel/kernel.sym
+	-t kernel/kernel | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > kernel/kernel.sym
